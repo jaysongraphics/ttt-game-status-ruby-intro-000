@@ -14,9 +14,9 @@ WIN_COMBINATIONS = [
 [6,4,2] # right_diagonal
 ]
 
-def won?(board)
+def won?
     WIN_COMBINATIONS.each do |combinations|
-      if combinations.each {|combination| combination == 'X' or combination == 'O'}
+      if combinations.all? {|combination| combination == 'X' or combination == 'O'}
         combinations
       else
         false
