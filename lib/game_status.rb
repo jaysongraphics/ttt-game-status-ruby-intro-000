@@ -14,7 +14,7 @@ WIN_COMBINATIONS = [
 [6,4,2] # right_diagonal
 ]
 
-def won?(board)
+def won?(array)
   WIN_COMBINATIONS.find do |win_combination|
     win_index_1 = win_combination[0]
     win_index_2 = win_combination[1]
