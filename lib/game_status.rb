@@ -3,7 +3,7 @@ def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
-def WIN_COMBINATIONS = [ 
+def WIN_COMBINATIONS = [
 [0,1,2], # top_row
 [3,4,5], # middle_row
 [6,7,8], # bottom_row
@@ -13,4 +13,3 @@ def WIN_COMBINATIONS = [
 [0,4,8], # left_diagonal
 [6,4,2] # right_diagonal
 ]
-end
