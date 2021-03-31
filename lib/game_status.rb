@@ -15,13 +15,15 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-    WIN_COMBINATIONS.each do |combinations|
-      position_1 = board[win_index_1] # value of board at win_index_1
-      position_2 = board[win_index_2] # value of board at win_index_2
-      position_3 = board[win_index_3] # value of board at win_index_3
-      position_1 == position_2 && position_2 == position_3 && position_taken?(board, win_index_1)
+  win_conditions.each do |win|
+  if win.all?{|y| board[y] == "X"}
+    return win
+    elsif win.all?{|y| board[y] == "O"}
+      return win
     end
-      end
+  end
+  return false 
+end
 
 def full?(board)
    board.all? {|i| i == "X" || i == "O"}
