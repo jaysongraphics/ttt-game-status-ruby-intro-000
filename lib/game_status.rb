@@ -14,15 +14,20 @@ WIN_COMBINATIONS = [
 [6,4,2] # right_diagonal
 ]
 
-def won?(board)
-  win_conditions.each do |win|
-  if win.all?{|y| board[y] == "X"}
-    return win
-    elsif win.all?{|y| board[y] == "O"}
-      return win
-    end
+def won?(array)
+  WIN_COMBINATIONS.find do |win_combination|
+    win_index_1 = win_combination[0]
+    win_index_2 = win_combination[1]
+    win_index_3 = win_combination[2]
+    position_1 = array[win_index_1]
+    position_2 = array[win_index_2]
+    position_3 = array[win_index_3]
+    if position_1 == "X" && position_2 == "X" && position_3 == "X" || position_1 == "O" && position_2 == "O" && position_3 == "O"
+        return win_combination
+      else
+        nil
+      end
   end
-  return false 
 end
 
 def full?(board)
