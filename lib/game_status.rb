@@ -16,7 +16,7 @@ WIN_COMBINATIONS = [
 
 def won?
     WIN_COMBINATIONS.each do |combinations|
-      if combinations.all? {|combination| combination == 'X' or combination == 'O'}
+      if combinations.each {|combination| combination == 'X' or combination == 'O'}
         combinations
       else
         false
